@@ -27,7 +27,14 @@ module SampleApp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 	# 日本語表示のために追加　藤代
-	 config.i18n.default_locale = :ja
+	#18n.enforce_available_locales = true
+	# config.i18n.default_locale = :ja
+
+	I18n.available_locales = [:en, :ja]
+	I18n.enforce_available_locales = true
+	I18n.default_locale = :ja
+
+
 
 	#  Asset Pipeline互換の行を追加　藤代
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
